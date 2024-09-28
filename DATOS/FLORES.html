@@ -11,16 +11,20 @@
 
 <body class="container">
     <audio id="cancion" autoplay loop>
-    <source src="img/agosto.mp4" type="audio/mpeg">
+    <source src="img/agosto.mp3" type="audio/mpeg">
+    <source src="img/agosto.ogg" type="audio/ogg">
     Tu navegador no soporta la reproducción de audio.
 </audio>
 
 <script>
     window.addEventListener('load', function() {
         const audio = document.getElementById('cancion');
-        audio.play();
+        audio.play().catch(error => {
+            console.log("La reproducción automática fue bloqueada por el navegador.", error);
+        });
     });
 </script>
+
 
     <div class="night"></div>
     <div class="flowers">
