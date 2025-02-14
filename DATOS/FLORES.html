@@ -11,18 +11,22 @@
 
 <body class="container">
     
+<button id="playBtn">Reproducir Música</button>
 <audio id="cancion" src="img/tu.mp3" preload="auto" loop></audio>
 
 <script>
-    window.addEventListener('load', function() {
-        const audio = document.getElementById('cancion');
+    const audio = document.getElementById('cancion');
+    const playBtn = document.getElementById('playBtn');
+    
+    playBtn.addEventListener('click', function() {
         audio.play().then(() => {
-            console.log("Reproducción automática iniciada.");
+            console.log("Reproducción manual iniciada.");
         }).catch(error => {
-            console.log("La reproducción automática fue bloqueada por el navegador.", error);
+            console.log("Error al reproducir.", error);
         });
     });
 </script>
+
 
 
     <div class="night"></div>
